@@ -26,7 +26,7 @@ class MaskToCenterPoint:
     RETURN_TYPES = ("STRING", "INT", "INT", "STRING",)
     RETURN_NAMES = ("coordinates", "x", "y", "debug",)
     FUNCTION = "process_inputs"
-    CATEGORY = "Masquerade Mods"
+    CATEGORY = "MaskCenter"
 
     def process_inputs(self, mode: str, min_area: int, mask=None, segs=None):
         if mask is None and segs is None:
