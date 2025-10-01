@@ -34,13 +34,7 @@ While `numpy` is almost always included with ComfyUI, `scipy` may not be. The in
 
 ## Installation
 
-First, place the node's code in the correct directory:
-
-1.  Navigate to your ComfyUI installation directory.
-2.  Go to the `custom_nodes` folder.
-3.  Clone or download this repository into the `custom_nodes` folder. The final path should look like: `ComfyUI/custom_nodes/ComfyUI_MaskToCenter`.
-
-Next, follow the instructions for your specific ComfyUI version to install the requirements.
+Follow the instructions for your specific ComfyUI version to install the requirements.
 
 ### Method A: Standard/Manual Installation
 
@@ -60,7 +54,7 @@ These instructions are for users who installed ComfyUI manually (e.g., via `git 
     ```
 3.  Restart ComfyUI.
 
-### Method B: Portable Installation (Corrected)
+### Method B: Portable Installation
 
 These instructions are for users of the standalone portable version of ComfyUI.
 
