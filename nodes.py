@@ -150,7 +150,7 @@ class MaskSubMassDetector:
     RETURN_TYPES = ("STRING", "INT", "INT", "STRING",)
     RETURN_NAMES = ("coordinates", "x", "y", "debug",)
     FUNCTION = "detect_centers"
-    CATEGORY = "Masquerade Mods"
+    CATEGORY = "MaskCenter"
 
     def detect_centers(self, separation_strength: int, mask=None, segs=None):
         if mask is None and segs is None:
