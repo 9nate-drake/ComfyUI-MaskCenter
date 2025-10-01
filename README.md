@@ -34,7 +34,7 @@ This pack provides two custom nodes for ComfyUI designed to find the center coor
     ```
 3.  Clone the repository using the following command:
     ```bash
-    git clone [https://github.com/9nate-drake/ComfyUI-MaskCenter](https://github.com/9nate-drake/ComfyUI-MaskCenter)
+    git clone https://github.com/9nate-drake/ComfyUI-MaskCenter
     ```
     This will create a `ComfyUI-MaskCenter` folder inside `custom_nodes`.
 
