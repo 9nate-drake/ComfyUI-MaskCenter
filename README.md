@@ -23,24 +23,30 @@ This pack provides two custom nodes for ComfyUI designed to find the center coor
     * In `Combined` mode, all segment masks are reconstructed onto a single canvas before processing.
     * In `Separate Regions` mode, each segment's mask is analyzed individually within its own cropped region.
 
-## Requirements
-
-This node requires the following Python libraries:
-
-* `numpy`
-* `scipy`
-
-While `numpy` is almost always included with ComfyUI, `scipy` may not be. The installation instructions below will ensure both are correctly installed.
-
 ## Installation
 
-Follow the instructions for your specific ComfyUI version to install the requirements.
+### 1. Clone the Repository
 
-### Method A: Standard/Manual Installation
+1.  Open a terminal or command prompt.
+2.  Navigate to your ComfyUI `custom_nodes` directory. For example:
+    ```bash
+    cd C:\Users\YourName\Desktop\ComfyUI_windows_portable\ComfyUI\custom_nodes
+    ```
+3.  Clone the repository using the following command:
+    ```bash
+    git clone [https://github.com/9nate-drake/ComfyUI-MaskCenter](https://github.com/9nate-drake/ComfyUI-MaskCenter)
+    ```
+    This will create a `ComfyUI-MaskCenter` folder inside `custom_nodes`.
+
+### 2. Install Requirements
+
+Next, follow the instructions for your specific ComfyUI version to install the required Python libraries.
+
+#### Method A: Standard/Manual Installation
 
 These instructions are for users who installed ComfyUI manually (e.g., via `git clone`).
 
-1.  **Activate your Python virtual environment (venv).** Open a terminal or command prompt and navigate to your ComfyUI directory. Activate your venv, for example:
+1.  **Activate your Python virtual environment (venv).** In your terminal, navigate to your main ComfyUI directory and activate your venv:
     ```bash
     # On Windows
     .\venv\Scripts\activate
@@ -50,22 +56,22 @@ These instructions are for users who installed ComfyUI manually (e.g., via `git 
     ```
 2.  **Install the requirements:**
     ```bash
-    pip install -r custom_nodes/ComfyUI_MaskToCenter/requirements.txt
+    pip install -r custom_nodes/ComfyUI-MaskCenter/requirements.txt
     ```
 3.  Restart ComfyUI.
 
-### Method B: Portable Installation
+#### Method B: Portable Installation
 
 These instructions are for users of the standalone portable version of ComfyUI.
 
 1.  **Open a standard command prompt or PowerShell.**
-2.  **Navigate to your ComfyUI portable directory.** For example:
+2.  **Navigate to your ComfyUI portable directory's root.** For example:
     ```bash
     cd C:\Users\YourName\Desktop\ComfyUI_windows_portable
     ```
 3.  **Run the pip install command using the embedded Python:**
     ```bash
-    .\python_embeded\python.exe -m pip install -r custom_nodes\ComfyUI_MaskToCenter\requirements.txt
+    .\python_embeded\python.exe -m pip install -r ComfyUI\custom_nodes\ComfyUI-MaskCenter\requirements.txt
     ```
 4.  Once it's finished, you can close the command prompt and restart ComfyUI.
 
