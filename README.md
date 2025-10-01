@@ -13,7 +13,7 @@ This pack provides two custom nodes for ComfyUI designed to find the center coor
     * `Separate Regions`: Finds the individual centers of multiple, non-contiguous masks.
 * **Noise Filtering:** Includes a `min_area` parameter to ignore small, noisy masks.
 * **Detailed Debug Output:** Provides a clear, text-based summary of the operations performed, including areas and coordinates found.
-* **Simple Coordinate Outputs:** Provides the final coordinates in multiple formats: a clean JSON string, and the first X and Y coordinates as separate integers.
+* **Simple Coordinate Outputs:** Provides the final coordinates in multiple formats: a clean JSON string of the coordinate(s) (compatible with SAM2 nodes), and, separately, the first X and Y coordinates as integers (first detected mask only)
 
 ## Usage & Behavior
 
