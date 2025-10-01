@@ -40,7 +40,7 @@ This pack provides two custom nodes for ComfyUI designed to find the center coor
 
 ### 2. Install Requirements
 
-Next, follow the instructions for your specific ComfyUI version to install the required Python libraries.
+If you've got other custom nodes installed, these libraries are probably already installed. Otherwise, follow the instructions for your specific ComfyUI version to install the required Python libraries. 
 
 #### Method A: Standard/Manual Installation
 
