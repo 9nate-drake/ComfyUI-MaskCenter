@@ -7,7 +7,7 @@ This pack provides two custom nodes for ComfyUI designed to find the center coor
 * **Multiple Input Types:** Accepts both standard `MASK` and `SEGS` (from nodes like the Impact Pack) inputs.
 * **Two Distinct Nodes:**
     1.  **Mask to Center Point:** For finding the center of whole masks or separating physically disconnected masks.
-    2.  **Detect Mask Sub-Masses:** For advanced analysis of a single, irregular mask to find the centers of its dense areas.
+    2.  **Detect Mask Sub-Masses (WIP):** For advanced analysis of a single, irregular mask to find the centers of its dense areas.
 * **Flexible Modes:**
     * `Combined`: Finds the single center of mass for all provided masks/segments.
     * `Separate Regions`: Finds the individual centers of multiple, non-contiguous masks.
@@ -97,7 +97,7 @@ This is the primary node for most use cases. It finds the geometric center of ma
 * **y** (`INT`): The Y-coordinate of the *first* point found.
 * **debug** (`STRING`): A detailed log of the process, including the number of masks found, their areas, and whether they were processed or skipped.
 
-### 2. Detect Mask Sub-Masses
+### 2. Detect Mask Sub-Masses (WIP)
 
 This is an advanced node for analyzing a single, complex mask that might have several dense areas connected by narrow "bridges". It intelligently severs these narrow connections to find the center of each larger part.
 
