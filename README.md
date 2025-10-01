@@ -23,17 +23,57 @@ This pack provides two custom nodes for ComfyUI designed to find the center coor
     * In `Combined` mode, all segment masks are reconstructed onto a single canvas before processing.
     * In `Separate Regions` mode, each segment's mask is analyzed individually within its own cropped region.
 
+## Requirements
+
+This node requires the following Python libraries:
+
+* `numpy`
+* `scipy`
+
+While `numpy` is almost always included with ComfyUI, `scipy` may not be. The installation instructions below will ensure both are correctly installed.
+
 ## Installation
+
+First, place the node's code in the correct directory:
 
 1.  Navigate to your ComfyUI installation directory.
 2.  Go to the `custom_nodes` folder.
 3.  Clone or download this repository into the `custom_nodes` folder. The final path should look like: `ComfyUI/custom_nodes/ComfyUI_MaskToCenter`.
-4.  Install the required dependencies. Open a terminal or command prompt, activate your virtual environment (if you use one), and run:
+
+Next, follow the instructions for your specific ComfyUI version to install the requirements.
+
+### Method A: Standard/Manual Installation
+
+These instructions are for users who installed ComfyUI manually (e.g., via `git clone`).
+
+1.  **Activate your Python virtual environment (venv).** Open a terminal or command prompt and navigate to your ComfyUI directory. Activate your venv, for example:
     ```bash
-    pip install -r ComfyUI/custom_nodes/ComfyUI_MaskToCenter/requirements.txt
+    # On Windows
+    .\venv\Scripts\activate
+    
+    # On Linux/macOS
+    source venv/bin/activate
     ```
-    (This will install `numpy` and `scipy`).
-5.  Restart ComfyUI.
+2.  **Install the requirements:**
+    ```bash
+    pip install -r custom_nodes/ComfyUI_MaskToCenter/requirements.txt
+    ```
+3.  Restart ComfyUI.
+
+### Method B: Portable Installation (Corrected)
+
+These instructions are for users of the standalone portable version of ComfyUI.
+
+1.  **Open a standard command prompt or PowerShell.**
+2.  **Navigate to your ComfyUI portable directory.** For example:
+    ```bash
+    cd C:\Users\YourName\Desktop\ComfyUI_windows_portable
+    ```
+3.  **Run the pip install command using the embedded Python:**
+    ```bash
+    .\python_embeded\python.exe -m pip install -r custom_nodes\ComfyUI_MaskToCenter\requirements.txt
+    ```
+4.  Once it's finished, you can close the command prompt and restart ComfyUI.
 
 ## Nodes
 
@@ -57,13 +97,13 @@ This is the primary node for most use cases. It finds the geometric center of ma
 * **y** (`INT`): The Y-coordinate of the *first* point found.
 * **debug** (`STRING`): A detailed log of the process, including the number of masks found, their areas, and whether they were processed or skipped.
 
-### 2. Detect Mask Sub-Masses (WIP)
+### 2. Detect Mask Sub-Masses
 
-This is an advanced node for analyzing a single, complex mask that might have several dense areas connected by narrow "bridges" (e.g., a mask of a person with outstretched arms). It intelligently severs these narrow connections to find the center of each larger part.
+This is an advanced node for analyzing a single, complex mask that might have several dense areas connected by narrow "bridges". It intelligently severs these narrow connections to find the center of each larger part.
 
 #### Inputs
 
-* **separation_strength** (`Int`): Controls how aggressively the node severs connections. A higher value will break thicker "bridges" between dense areas. This value corresponds to the radius of the "carving" tool used to separate the masses.
+* **separation_strength** (`Int`): Controls how aggressively the node severs connections. A higher value will break thicker "bridges" between dense areas.
 * **mask** (`MASK`, optional): A standard ComfyUI mask tensor. Can be a batch of masks.
 * **segs** (`SEGS`, optional): Segment data. Each segment will be analyzed individually for sub-masses.
 
