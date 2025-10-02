@@ -105,17 +105,25 @@ class MaskToCenterPoint:
             if num_features > 0:
                 debug_lines.append(f"- {name}: found {num_features} separate region(s).")
                 centers = center_of_mass(mask_np, labeled_array, range(1, num_features + 1))
-                if num_features == 1:
-                    centers = [centers] # Ensure it's always a list to iterate
-                for i, (center_y, center_x) in enumerate(centers):
+                if not isinstance(centers, list):
+                    centers = [centers]
+                
+                for i, center_tuple in enumerate(centers):
+                    # Defensive check for tuple format
+                    if not (isinstance(center_tuple, tuple) and len(center_tuple) == 2):
+                        continue
+
+                    center_y, center_x = center_tuple
                     region_mask = (labeled_array == (i + 1))
                     region_area = np.count_nonzero(mask_np[region_mask])
+
                     if region_area >= min_area:
                         x_coord, y_coord = int(round(center_x + offset_x)), int(round(center_y + offset_y))
                         coords_list.append({"x": x_coord, "y": y_coord})
                         debug_lines.append(f"  - Region {i}: area={region_area}, center=({x_coord}, {y_coord})")
                     else:
-                        debug_lines.append(f"  - Region {i}: area={region_area}, skipped (min area: {min_area}).")
+                        debug_lines.append(f"  - Skipping Region {i}: area={region_area} is below min_area {min_area}.")
+
 
         else: # Combined mode
             area = np.count_nonzero(mask_np)
